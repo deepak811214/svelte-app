@@ -9,16 +9,21 @@
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"format": "prettier --write .",
-		"lint": "prettier --check ."
+		"lint": "prettier --check .",
+		"live-reload": "wrangler pages dev .svelte-kit/cloudflare --compatibility-date=2024-01-02 --live-reload",
+		"build-watch": "npm run build -- -w",
+		"local-db": "wrangler d1 execute svelte-db --local --file=./src/schema.sql",
+		"remote-db": "wrangler d1 execute svelte-db --remote --file=./src/schema.sql"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^4.0.0",
+		"@sveltejs/adapter-cloudflare": "^6.0.1",
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"prettier": "^3.4.2",
 		"prettier-plugin-svelte": "^3.3.3",
 		"svelte": "^5.0.0",
-		"vite": "^6.0.0"
+		"vite": "^6.0.0",
+		"wrangler": "^4.6.0"
 	}
-
 }

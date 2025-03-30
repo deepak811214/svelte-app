@@ -1,0 +1,6 @@
+name = "svelte-app"
+
+[[d1_databases]]
+binding = "DATABASE"
+database_name = "svelte-db"
+database_id = "38b5a1fb-d78d-4ae7-bffd-09bc63002fd2"
