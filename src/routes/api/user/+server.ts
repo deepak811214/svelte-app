@@ -2,7 +2,7 @@ import { json, type RequestHandler } from '@sveltejs/kit';
 
 export const GET: RequestHandler = async function ({ platform }) {
  // @ts-ignore
- const queryResult = await platform?.env.DATABASE.prepare('SELECT * FROM users LIMIT 5').run();
+ const queryResult = await platform?.env.DATABASE.prepare('SELECT * FROM users ORDER BY datetime(created_at) DESC').run();
 
  return json(queryResult);
 };

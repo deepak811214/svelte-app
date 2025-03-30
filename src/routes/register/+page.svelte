@@ -30,16 +30,6 @@
         </form>
   </div>
   
-  <!-- <section>
-    <h1>Users</h1>
-    {#each $page.data.users.results as { email, password }}
-      <div>
-        <h2>{email}</h2>
-        <p>{password}</p>
-      </div>
-    {/each}
-  </section> -->
-  
   <style>
     .container {
       display: flex;

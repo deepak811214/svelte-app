@@ -7,7 +7,7 @@
   <section class="container">
     <div class="login-form">
         <h1>Svelte Kit Demo</h1>
-        <button onclick={redirect} style="height: 40px;border-radius: 5px;width: 21vw;color: white; font-size: 20px; background:#1C5EA4;">Start Demo</button>
+        <button onclick={redirect} style="height: 40px;border-radius: 5px;width: 20vw;color: white; font-size: 20px; background:#1C5EA4;">Start Demo</button>
     </div>
   </section>
   
