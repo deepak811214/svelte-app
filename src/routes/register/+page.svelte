@@ -4,8 +4,14 @@
   
     let email = "";
     let password = "";
-  
-    async function login() {
+    let confirmPassword = "";
+    let error = "";
+
+    async function register() {
+      if (password !== confirmPassword) {
+        error = "Passwords do not match, please try again.";
+        return;
+      }
       const res = await fetch("/api/user", {
         method: "POST",
         body: JSON.stringify({ email, password }),
@@ -22,11 +28,14 @@
     }
   </script>
   <div class="container">
-        <form on:submit|preventDefault={login} class="login-form">
+        <form on:submit|preventDefault={register} class="login-form">
             <h2>Register New User</h2>
-            <input type="text" style="height: 30px;border-radius: 5px;width: 20vw;" bind:value={email} placeholder="Email" required />
-            <input type="password" style="height: 30px;border-radius: 5px;width: 20vw;" bind:value={password} placeholder="Password" required />
+            <input type="email" style="height: 40px;border-radius: 5px;width: 20vw;" bind:value={email} placeholder="Enter Email" required />
+            <input type="password" style="height: 40px;border-radius: 5px;width: 20vw;" bind:value={password} placeholder="Enter Password" required />
+            <input type="password" style="height: 40px;border-radius: 5px;width: 20vw;" bind:value={confirmPassword} placeholder="Confirm Password" required />
+            <div style="color: red;">{error}</div>
             <button type="submit" style="height: 40px;border-radius: 5px;width: 21vw;color: white; font-size: 20px; background:#1C5EA4;">Register</button>
+            <div>Already have an account? <a href="/login">Login</a></div>
         </form>
   </div>
   
@@ -42,7 +51,7 @@
       flex-direction: column;
       align-items: center;
       gap: 20px;
-      height: 30vh;
+      height: 45vh;
       width: 30vw;
       text-align: center;
       background-color: #f2f2f2;

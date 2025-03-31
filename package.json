@@ -12,8 +12,8 @@
 		"lint": "prettier --check .",
 		"live-reload": "wrangler pages dev .svelte-kit/cloudflare --compatibility-date=2024-01-02 --live-reload",
 		"build-watch": "npm run build -- -w",
-		"local-db": "wrangler d1 execute svelte-db --local --file=./src/schema.sql",
-		"remote-db": "wrangler d1 execute svelte-db --remote --file=./src/schema.sql"
+		"execute-local-db": "wrangler d1 execute svelte-db --local --file=./src/schema.sql",
+		"execute-remote-db": "wrangler d1 execute svelte-db --remote --file=./src/schema.sql"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^4.0.0",

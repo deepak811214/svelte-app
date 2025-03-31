@@ -1,6 +1,6 @@
 <script lang="ts">
     function redirect() {
-      window.location.href = "/register";
+      window.location.href = "/login";
     }
   </script>
   
